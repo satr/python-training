@@ -8,22 +8,28 @@ valid domain values in a small dataclass.
 
 ## Learn before coding
 
-Parse text in stages: `"A7, 21.5".split(",")` produces fields, and
-`float("21.5")` converts a numeric field. Surround only expected conversion
-errors with `try/except ValueError`; raise a clear `ValueError` for the
-wrong number of fields or invalid ranges, then construct the dataclass.
-For filtering, `minimum <= value <= maximum` includes both endpoints.
-Iterables may be generators, so iterate once instead of indexing or assuming
-they can be restarted. Validate before constructing a record, and decide how
-empty input differs from malformed input.
+- Parse text in stages:
+  - `"A7, 21.5".split(",")` produces fields.
+  - `float("21.5")` converts a numeric field.
+  - Catch only expected conversion errors with `try/except ValueError`.
+  - Raise a clear `ValueError` for the wrong field count or invalid ranges
+    before constructing the dataclass.
+- For filtering, `minimum <= value <= maximum` includes both endpoints.
+- Account for iterable and validation edge cases:
+  - Iterate once because an input may be a generator.
+  - Validate before constructing a record.
+  - Distinguish empty input from malformed input.
 
 ## Task
 
-Implement `parse_measurement`, `valid_temperatures`, and `average_temperature`.
-Accept rows in `sensor_id,celsius` form and reject malformed identifiers,
-non-numeric values, and non-finite temperatures. Temperature range endpoints
-are inclusive, and a reversed range raises `ValueError`. Iterable inputs may be
-one-shot generators.
+- Implement `parse_measurement`, `valid_temperatures`, and
+  `average_temperature`.
+- Validate measurement rows:
+  - Accept `sensor_id,celsius` form.
+  - Reject malformed identifiers, non-numeric values, and non-finite
+    temperatures.
+- Treat range endpoints as inclusive and raise `ValueError` for a reversed
+  range. Iterable inputs may be one-shot generators.
 
 ## Run
 

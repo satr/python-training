@@ -11,16 +11,24 @@ processing. Deduplication must use a documented key.
 Treat each row as untrusted mapping data: read a field with `row["event_id"]`,
 parse an ISO timestamp with `datetime.fromisoformat(...)`, and convert a
 numeric value with `float(...)`. Normalize timezone-aware timestamps to one
-timezone before comparing them. A useful pipeline is validate required fields,
-coerce types, keep the contract's duplicate-ID winner, then sort records by
-the required stable keys. Test naive versus aware times, missing fields, and
-non-finite numbers; do not silently turn malformed input into a valid event.
+timezone before comparing them.
+
+- Process rows in a deliberate order:
+  - Validate required fields.
+  - Coerce types.
+  - Keep the contract's duplicate-ID winner.
+  - Sort records by the required stable keys.
+- Test naive versus aware times, missing fields, and non-finite numbers; do not
+  silently turn malformed input into a valid event.
 
 ## Task
 
-Implement `normalize_events`. Validate the required fields, convert UTC
-timestamps to canonical ISO-8601 form, coerce values to floats, keep the last
-event for each ID, and return chronological output.
+- Implement `normalize_events`:
+  - Validate the required fields.
+  - Convert UTC timestamps to canonical ISO-8601 form.
+  - Coerce values to floats.
+  - Keep the last event for each ID.
+  - Return chronological output.
 
 ## Run
 

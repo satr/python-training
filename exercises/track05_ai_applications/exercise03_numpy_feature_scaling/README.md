@@ -12,18 +12,25 @@ a safe scale so transformation never divides by zero.
 Convert input with `np.asarray(values, dtype=np.float64)` and use `axis=0`
 for one statistic per feature column. Standard scaling is
 `(values - mean) / scale`; `np.mean([[1, 3], [5, 7]], axis=0)` computes
-column means. Fit parameters from training rows only, replace a zero
-population scale according to the contract, and apply saved parameters to
-later rows. Validate two-dimensional, finite, compatible arrays, and copy
-inputs when a transformation must not mutate caller data.
+column means.
+
+- Keep fitting and transformation separate:
+  - Fit parameters from training rows only.
+  - Replace a zero population scale according to the contract.
+  - Apply saved parameters to later rows without re-fitting.
+- Validate two-dimensional, finite, compatible arrays, and copy inputs when a
+  transformation must not mutate caller data.
 
 ## Task
 
-Implement `ScalingParameters`, `fit_scaler`, and `transform_features`. Fit
-column-wise means and population standard deviations from a non-empty,
-two-dimensional finite numeric matrix. Keep parameters immutable, use a scale
-of one for constant columns, validate feature counts, return new arrays, and
-never change or re-fit from a matrix passed for transformation.
+- Implement `ScalingParameters`, `fit_scaler`, and `transform_features`.
+- Fit parameters with these rules:
+  - Use column-wise means and population standard deviations from a non-empty,
+    two-dimensional finite numeric matrix.
+  - Keep parameters immutable.
+  - Use a scale of one for constant columns.
+- During transformation, validate feature counts, return new arrays, and never
+  change or re-fit from the input matrix.
 
 ## Run
 

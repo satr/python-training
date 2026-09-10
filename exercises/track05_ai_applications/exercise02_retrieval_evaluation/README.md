@@ -11,11 +11,16 @@ coverage, and reciprocal rank rewards placing the first relevant result early.
 For ranked IDs, precision at `k` is relevant hits in the first `k` results
 divided by the number examined, while recall divides hits by all relevant
 IDs. Reciprocal rank is `1 / position` for the first relevant result, or
-zero if none appears. For example, retrieved `("b", "a")`, relevant
-`{"a"}`, and `k=2` has one hit and first relevant position two. Clamp the
-ranking to `k`, decide how duplicate IDs count from the contract, handle an
-empty relevant set consistently, then average each metric across cases;
-validate `k` before indexing.
+zero if none appears.
+For example, retrieved `("b", "a")`, relevant `{"a"}`, and `k=2` has one hit
+and first relevant position two.
+
+- Evaluate each case in a consistent order:
+  - Validate `k` before indexing.
+  - Clamp the ranking to `k`.
+  - Apply the contract's rule for duplicate IDs.
+  - Handle an empty relevant set consistently.
+  - Average each metric across cases.
 
 ## Task
 

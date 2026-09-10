@@ -13,16 +13,19 @@ Index a list with `items[0]`, loop with `for item in items`, and use
 does not mutate its input. `min`, `max`, and `sum` help summarize non-empty
 numbers, while `items[:limit]` safely takes at most a requested number.
 For example, `sorted([4, 1, 3], reverse=True)[:2]` gives the two largest
-values. Decide what an empty input returns before calling `min` or `max`, and
-remember that a tuple such as `(lowest, highest, average)` is ordered and
-immutable.
+values.
+
+- Before summarizing:
+  - Decide what an empty input returns before calling `min` or `max`.
+  - Remember that `(lowest, highest, average)` is an ordered, immutable tuple.
 
 ## Task
 
-Implement `summarize_scores` to return the minimum, maximum, and average, or
-`None` for no scores. Implement `top_scores` to return up to `limit` values in
-descending order without changing the input. A non-positive limit returns an
-empty list.
+- Implement `summarize_scores` to return the minimum, maximum, and average, or
+  `None` for no scores.
+- Implement `top_scores` with these rules:
+  - Return up to `limit` values in descending order without changing the input.
+  - Return an empty list for a non-positive limit.
 
 ## Run
 

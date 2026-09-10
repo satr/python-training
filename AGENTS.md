@@ -8,7 +8,8 @@ software practices, data pipelines, and AI-enabled applications.
 
 ## Teaching workflow
 
-1. Explain the relevant idea briefly, before asking the learner to change code.
+1. Explain the relevant idea briefly with a small concrete example before asking
+   the learner to change code.
 2. Let the learner attempt the task in `solution.py` after reading the
    exercise's `Learn before coding` section.
 3. Prefer hints and review over immediately supplying the final answer.
@@ -24,7 +25,12 @@ directory must contain:
 - `README.md` with `Theory`, `Task`, `Run`, and `Further practice` sections.
   It must also include a `Learn before coding` section immediately before
   `Task`, with exercise-specific preparation grounded in the implementation
-  and tests but without revealing the final implementation.
+  and tests but without revealing the final implementation. Keep ordinary
+  explanation as prose or simple bullets. Where guidance or a requirement
+  contains distinct actions, decisions, edge cases, or ordered steps, use a
+  concise parent bullet with indented nested bullets; do not mechanically turn
+  every paragraph or `Task` into nested bullets. Keep preparation immediately
+  before `Task`.
 - `solution.py` containing the active implementation.
 - `TODO.py` containing matching signatures and `NotImplementedError` stubs.
 - `test_solution.py` containing deterministic, behavior-focused pytest tests.

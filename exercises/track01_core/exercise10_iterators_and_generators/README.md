@@ -21,16 +21,20 @@ def positives(values):
             yield value
 ```
 
-Separate the phases: apply each adjustment, calculate totals, then yield
-matching records. Consume one-shot iterables once, preserve untouched records,
-and decide explicitly how missing keys or quantities below zero are handled.
+- Separate the phases:
+  - Apply each adjustment.
+  - Calculate totals.
+  - Yield matching records.
+- Consume one-shot iterables once, preserve untouched records, and define how
+  missing keys or quantities below zero are handled.
 
 ## Task
 
-Implement `apply_adjustments`, `inventory_value`, and `items_to_reorder`.
-Adjustments may be a one-shot iterable and may mention one SKU repeatedly.
-Return a new inventory without changing its items. Yield reorder items lazily
-at or below their reorder level, sorted by SKU.
+- Implement `apply_adjustments`, `inventory_value`, and `items_to_reorder`.
+- Apply adjustments without changing the original inventory:
+  - Accept a one-shot iterable that may mention one SKU repeatedly.
+  - Return a new inventory, reusing untouched items and replacing adjusted items.
+- Yield reorder items lazily at or below their reorder level, sorted by SKU.
 
 ## Run
 

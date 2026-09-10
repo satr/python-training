@@ -14,18 +14,22 @@ pl.col("amount").cast(pl.Float64))` is not executed until `.collect()`.
 `group_by(["day", "category"]).agg(pl.col("amount").sum())` creates grouped
 totals, and `.sort(["day", "category"])` makes their order explicit. For
 unrelated data, `pl.DataFrame({"kind": ["x"], "amount": [2]}).lazy()
-.select(pl.col("amount") + 1).collect()` adds one after collection. Validate
-required columns and values before or during the lazy plan, reject null,
-blank, non-finite, and timezone cases as required by the contract, and do not
-assume lazy expressions run immediately.
+.select(pl.col("amount") + 1).collect()` adds one after collection.
+
+- Validate the lazy pipeline's boundaries:
+  - Check required columns and values before or during the plan.
+  - Reject null, blank, non-finite, and timezone cases required by the contract.
+  - Do not assume lazy expressions run immediately.
 
 ## Task
 
-Implement `daily_category_totals`. Accept a Polars `DataFrame` with
-`occurred_at` as `Datetime("us", "UTC")`, `category` as `String`, and `value`
-as `Float64`. Reject missing, null, blank, or non-finite data. Use a lazy
-pipeline to group count and sum by UTC date and category, then return a
-deterministically sorted `DataFrame` without changing the input.
+- Implement `daily_category_totals`.
+- Enforce the input contract:
+  - Accept `occurred_at` as `Datetime("us", "UTC")`, `category` as `String`,
+    and `value` as `Float64`.
+  - Reject missing, null, blank, or non-finite data.
+- Use a lazy pipeline to group count and sum by UTC date and category, then
+  return a deterministically sorted `DataFrame` without changing the input.
 
 ## Run
 

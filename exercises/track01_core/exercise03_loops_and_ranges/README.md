@@ -18,22 +18,25 @@ count = 3
 step = 5
 current = start
 for _ in range(count):
-    values.append(current)
     current += step
+    values.append(current)
+# values is now [15, 20, 25]
 ```
 
-The update can happen before or after appending according to what each snapshot
-means. For example, repeatedly add `5` to `current = 10` to record three
-projections. Decide what zero iterations and negative counts should do before
-coding, and do not accidentally reuse one mutable list between calls. Check
-whether the initial value belongs in the returned sequence, then trace the
-first two iterations by hand.
+- Decide exactly what each recorded snapshot represents:
+  - Choose whether to record before or after each update.
+  - For example, repeatedly add `5` to `current = 10` and record three projections.
+  - Define the behavior for zero and negative counts.
+  - Decide whether the initial value belongs in the returned sequence.
+  - Create a fresh result list for each call instead of reusing mutable state.
+  - Trace the first two iterations by hand before coding.
 
 ## Task
 
-Implement `project_balances`. Apply the deposit once per month and return each
-month's resulting balance. Return an empty list for zero months and raise
-`ValueError` when `months` is negative.
+- Implement `project_balances` with these count rules:
+  - Apply the deposit once per month and return each month's resulting balance.
+  - Return an empty list for zero months.
+  - Raise `ValueError` when `months` is negative.
 
 ## Run
 

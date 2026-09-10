@@ -2,9 +2,26 @@
 
 ## Theory
 
-Variables name values so calculations can be read in steps. Arithmetic
-operators produce new numeric values, while f-strings combine values with text
-and can format money to a fixed number of decimal places.
+Variables give names to values, which makes calculations easier to follow.
+Arithmetic creates new numeric values. For example, named intermediate values
+can make a price calculation clear:
+
+```python
+quantity = 3
+unit_price = 2.50
+tax_rate = 0.08
+subtotal = quantity * unit_price
+tax = subtotal * tax_rate
+total = subtotal + tax
+```
+
+F-strings let you insert values into text. Add `:.2f` when a number should
+look like money with exactly two digits after the decimal point:
+
+```python
+item = "notebook"
+text = f"{quantity} x {item} costs ${unit_price:.2f}"
+```
 
 ## Learn before coding
 
@@ -26,9 +43,10 @@ print(f"Next stop serves {count + 1} people")
 
 ## Task
 
-Implement `calculate_total` and `format_receipt`. Inputs are already validated.
-The receipt must have the form `2 x pen @ $1.50 = $3.00`, with both prices
-shown to two decimal places.
+- Implement `calculate_total` and `format_receipt` for already-valid inputs.
+- Format the receipt precisely:
+  - Use the form `2 x pen @ $1.50 = $3.00`.
+  - Show both prices to two decimal places.
 
 ## Run
 

@@ -12,16 +12,23 @@ tests do not depend on the process command line.
 `parser.add_argument("--name", default="reader")` supplies a default, while
 `type=int` converts text such as `"3"` to an integer. Parse an explicit list
 with `parser.parse_args(["--name", "Ada"])`; this makes tests independent of
-the process command line. Keep the stages separate: build the parser, parse,
-render, then let `main` return a status code. Add bounds with an appropriate
-parser action or check, distinguish omitted options from supplied ones, and
-let argparse handle invalid input rather than printing from helper functions.
+the process command line.
+
+- Keep command handling in separate stages:
+  - Build the parser.
+  - Parse and render.
+  - Let `main` return a status code.
+- Add bounds with an appropriate parser action or check, distinguish omitted
+  options from supplied ones, and let argparse handle invalid input rather than
+  printing from helper functions.
 
 ## Task
 
-Build a parser with the positional `name` argument and the optional `--count`
-and `--shout` arguments. Render the greeting, keep `main(argv)` testable, and restrict count
-to the safe range 1 through 1000.
+- Build a parser with:
+  - The positional `name` argument.
+  - The optional `--count` and `--shout` arguments.
+- Render the greeting, keep `main(argv)` testable, and restrict count to the
+  safe range 1 through 1000.
 
 ## Run
 

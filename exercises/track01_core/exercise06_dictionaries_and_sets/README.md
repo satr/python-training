@@ -12,14 +12,17 @@ Use `counts[word] = counts.get(word, 0) + 1` to update a dictionary counter;
 `.get` supplies a value when a key is absent. Sets remove duplicates, and
 `left & right` is their intersection. For example, counting `["red", "blue",
 "red"]` gives `{"red": 2, "blue": 1}`, while `{"a", "b"} & {"b", "c"}`
-contains only `"b"`. Build counters in input order when predictable output
-matters, sort a set-derived result before returning it, and do not mutate
-caller-owned sets or assume set iteration order is stable.
+contains only `"b"`.
+
+- Keep collection behavior predictable:
+  - Build counters in input order when output order matters.
+  - Sort a set-derived result before returning it.
+  - Do not mutate caller-owned sets or assume set iteration order is stable.
 
 ## Task
 
-Implement `count_items` to count each string and `common_items` to return the
-sorted strings present in both input sets.
+- Implement `count_items` to count each string.
+- Implement `common_items` to return the sorted strings present in both sets.
 
 ## Run
 

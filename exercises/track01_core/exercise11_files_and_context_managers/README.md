@@ -11,18 +11,25 @@ file in write mode replaces its previous contents.
 Use `with path.open("r", encoding="utf-8") as file:` so the file closes even
 when reading fails; writing uses `"w"` and `file.write(text)`. `line.strip()`
 removes surrounding whitespace, while `line.startswith("#")` identifies a
-comment. A reusable sequence is open, iterate, normalize, skip intentionally
-empty records, then return the collected values; for saving, write one record
-plus `"\n"` and count successful records. Choose text mode and UTF-8
-explicitly, avoid treating a blank line as data, and remember that `"w"`
-replaces an existing file.
+comment.
+
+- For loading, follow a clear sequence:
+  - Open, iterate, and normalize each line.
+  - Skip intentionally empty records.
+  - Return the collected values.
+- For saving, write each record plus `"\n"` and count records successfully
+  consumed.
+- Choose text mode and UTF-8 explicitly; remember that `"w"` replaces a file.
 
 ## Task
 
-Implement `load_tasks` and `save_tasks` using UTF-8. Loading strips surrounding
-whitespace and ignores blank lines and lines whose first non-space character is
-`#`. Saving overwrites the file with one task per line and returns the number
-of tasks consumed from the iterable.
+- Implement `load_tasks` and `save_tasks` using UTF-8.
+- When loading:
+  - Strip surrounding whitespace.
+  - Ignore blank lines and lines whose first non-space character is `#`.
+- When saving:
+  - Overwrite the file with one task per line.
+  - Return the number of tasks consumed from the iterable.
 
 ## Run
 

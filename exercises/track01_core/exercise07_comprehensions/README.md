@@ -13,15 +13,20 @@ A dictionary comprehension looks like
 can filter with `[name for name in names if name.startswith("A")]`.
 For unrelated data, `{n: n * n for n in [2, 3]}` maps each input and
 `[n for n in [2, 5, 8] if n > 4]` keeps selected values. First write the
-equivalent loop, identify the transformed value and the filter, then shorten
-it. Create a new result rather than changing the input dictionary, and decide
-whether output ordering follows input insertion order.
+equivalent loop, then identify the transformed value and filter before
+shortening it.
+
+- Preserve collection behavior:
+  - Create a new result rather than changing the input dictionary.
+  - Decide whether output ordering follows input insertion order.
 
 ## Task
 
-Implement `discounted_prices` as a new dictionary whose values are reduced by
-the given percentage. Implement `affordable_items` as a sorted list of names
-whose prices are less than or equal to `maximum`. Do not mutate the inputs.
+- Implement both collection transformations without mutating the inputs:
+  - `discounted_prices` returns a new dictionary with values reduced by the
+    given percentage.
+  - `affordable_items` returns a sorted list of names whose prices are less
+    than or equal to `maximum`.
 
 ## Run
 

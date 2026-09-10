@@ -12,16 +12,21 @@ A decorator receives a function and returns a wrapper:
 `def decorate(function):` followed by `def wrapper(value): return function(value)`
 and `return wrapper`. A closure keeps variables from the enclosing call, so a
 `cache = {}` created when decorating can be reused by later calls. For example,
-a square function can cache its integer results. Check the cache before calling
-the wrapped function, cache successful returns only, and use
-`functools.wraps(function)` so the wrapper retains the original name and
-documentation. Consider repeated arguments and recursive calls separately.
+a square function can cache its integer results.
+
+- A caching wrapper should:
+  - Check the cache before calling the wrapped function.
+  - Cache successful returns only.
+  - Use `functools.wraps(function)` to retain the original metadata.
+- Consider repeated arguments and recursive calls separately.
 
 ## Task
 
-Implement `memoize_int` to cache successful results by integer argument,
-without caching exceptions, and preserve wrapped metadata. Use it with
-`fibonacci`, which raises `ValueError` for negative inputs.
+- Implement `memoize_int` with these wrapper requirements:
+  - Cache successful results by integer argument.
+  - Do not cache exceptions.
+  - Preserve wrapped metadata.
+- Use it with `fibonacci`, which raises `ValueError` for negative inputs.
 
 ## Run
 

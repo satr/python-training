@@ -12,17 +12,23 @@ must be created per object so instances do not accidentally share state.
 an object with `point.x` and `point.y`; a default such as `done: bool = False`
 is used when omitted. A container class keeps private state on `self`, for
 example `self.items = []`, and methods update that state through
-`self.items.append(...)`. Plan each operation as lookup, validation, state
-change, and return value. Decide how blank names and repeated names behave,
-preserve insertion order with a list, and do not create a new container for
-each method call.
+`self.items.append(...)`.
+
+- Plan each operation in stages:
+  - Look up existing state.
+  - Validate the request.
+  - Change state and return the required value.
+- Decide how blank and repeated names behave, preserve insertion order with a
+  list, and keep one container across method calls.
 
 ## Task
 
-Create the `Task` dataclass and implement `TaskList`. `add` strips surrounding
-whitespace, rejects blank or duplicate titles, stores tasks in insertion order,
-and returns the new task. `complete` returns whether a matching task was found,
-and `pending` returns the titles of incomplete tasks in insertion order.
+- Create the `Task` dataclass and implement `TaskList`.
+- Implement each method's contract:
+  - `add` strips whitespace, rejects blank or duplicate titles, stores tasks in
+    insertion order, and returns the new task.
+  - `complete` returns whether a matching task was found.
+  - `pending` returns incomplete titles in insertion order.
 
 ## Run
 
