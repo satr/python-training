@@ -57,7 +57,7 @@ help:
 	  'reset-all                Restore every solution (destructive)'
 
 install:
-	"$(PYTHON)" -m pip install -e ".[dev]"
+	"$(PYTHON)" -m pip install -e ".[dev,data,ai,pytorch]"
 
 test:
 	"$(PYTHON)" -m pytest -m "not integration"
