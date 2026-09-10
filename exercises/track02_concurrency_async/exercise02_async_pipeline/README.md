@@ -8,15 +8,32 @@ instead of leaving background work behind.
 
 ## Learn before coding
 
-An `asyncio.Queue(maxsize=2)` provides bounded handoff: `await queue.put(x)`
-waits when full, and `item = await queue.get()` receives one value. An async
-worker can `result = await transform(item)` and call `queue.task_done()` in a
-`finally` block.
+An `asyncio.Queue(maxsize=2)` provides bounded handoff. Putting waits when the
+queue is full, and getting receives one value:
+
+```python
+await queue.put(value)
+item = await queue.get()
+```
+
+An async worker can await a transformation and mark the item done in a
+`finally` block:
+
+```python
+try:
+    result = await transform(item)
+finally:
+    queue.task_done()
+```
 
 - Sketch the pipeline as separate producer, worker, and collector stages.
 - Coordinate their lifetimes:
   - Use sentinel values or cancellation to stop workers after production.
-  - Use `await queue.join()` to account for every item.
+  - Account for every item:
+
+    ```python
+    await queue.join()
+    ```
 - Preserve input order by tagging values with indexes even when tasks finish
   out of order, and validate positive worker and queue sizes.
 

@@ -10,7 +10,11 @@ and tests explicit.
 
 An injected repository is used through its protocol: call `get(id)` to inspect
 existing state and `save(order)` to persist. A dataclass can be created with
-`OrderLine("part-7", 2, 4.5)`, and a line total is `quantity * unit_price`.
+`OrderLine("part-7", 2, 4.5)`. Calculate a line total with:
+
+```python
+quantity * unit_price
+```
 
 - Structure the service operation in order:
   - Validate the ID and lines before side effects.

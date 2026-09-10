@@ -8,12 +8,26 @@ express common collection operations clearly.
 
 ## Learn before coding
 
-Index a list with `items[0]`, loop with `for item in items`, and use
-`sorted(items, reverse=True)` when a new ordered list is needed; `sorted`
-does not mutate its input. `min`, `max`, and `sum` help summarize non-empty
-numbers, while `items[:limit]` safely takes at most a requested number.
-For example, `sorted([4, 1, 3], reverse=True)[:2]` gives the two largest
-values.
+Index a list with `items[0]`. A loop visits each item:
+
+```python
+for item in items:
+    process(item)
+```
+
+Use this call when a new ordered list is needed:
+
+```python
+sorted(items, reverse=True)
+```
+
+`sorted` does not mutate its input. `min`, `max`, and `sum` help summarize
+non-empty numbers, while `items[:limit]` safely takes at most a requested
+number. For example, this expression gives the two largest values:
+
+```python
+sorted([4, 1, 3], reverse=True)[:2]
+```
 
 - Before summarizing:
   - Decide what an empty input returns before calling `min` or `max`.

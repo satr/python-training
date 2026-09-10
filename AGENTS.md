@@ -30,7 +30,9 @@ directory must contain:
   contains distinct actions, decisions, edge cases, or ordered steps, use a
   concise parent bullet with indented nested bullets; do not mechanically turn
   every paragraph or `Task` into nested bullets. Keep preparation immediately
-  before `Task`.
+  before `Task`. Put substantial executable examples in language-tagged fenced
+  code blocks; keep short identifiers, literals, operators, and API names inline
+  when they are merely being referenced.
 - `solution.py` containing the active implementation.
 - `TODO.py` containing matching signatures and `NotImplementedError` stubs.
 - `test_solution.py` containing deterministic, behavior-focused pytest tests.

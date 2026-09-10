@@ -8,10 +8,16 @@ processing. Deduplication must use a documented key.
 
 ## Learn before coding
 
-Treat each row as untrusted mapping data: read a field with `row["event_id"]`,
-parse an ISO timestamp with `datetime.fromisoformat(...)`, and convert a
-numeric value with `float(...)`. Normalize timezone-aware timestamps to one
-timezone before comparing them.
+Treat each row as untrusted mapping data. Read a field, parse an ISO timestamp,
+and convert a numeric value at the boundary:
+
+```python
+row["event_id"]
+datetime.fromisoformat(timestamp_text)
+float(value_text)
+```
+
+Normalize timezone-aware timestamps to one timezone before comparing them.
 
 - Process rows in a deliberate order:
   - Validate required fields.

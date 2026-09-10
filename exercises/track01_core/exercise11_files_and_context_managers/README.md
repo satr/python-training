@@ -8,10 +8,15 @@ file in write mode replaces its previous contents.
 
 ## Learn before coding
 
-Use `with path.open("r", encoding="utf-8") as file:` so the file closes even
-when reading fails; writing uses `"w"` and `file.write(text)`. `line.strip()`
-removes surrounding whitespace, while `line.startswith("#")` identifies a
-comment.
+Use a context manager so the file closes even when reading fails:
+
+```python
+with path.open("r", encoding="utf-8") as file:
+    text = file.read()
+```
+
+Writing uses `"w"` and `file.write(text)`. `line.strip()` removes surrounding
+whitespace, while `line.startswith("#")` identifies a comment.
 
 - For loading, follow a clear sequence:
   - Open, iterate, and normalize each line.

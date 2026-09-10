@@ -9,12 +9,22 @@ valid domain values in a small dataclass.
 ## Learn before coding
 
 - Parse text in stages:
-  - `"A7, 21.5".split(",")` produces fields.
-  - `float("21.5")` converts a numeric field.
+  - Split text into fields, then convert the numeric field:
+
+    ```python
+    fields = "A7, 21.5".split(",")
+    temperature = float(fields[1])
+    ```
+
   - Catch only expected conversion errors with `try/except ValueError`.
   - Raise a clear `ValueError` for the wrong field count or invalid ranges
     before constructing the dataclass.
-- For filtering, `minimum <= value <= maximum` includes both endpoints.
+- For filtering, this comparison includes both endpoints:
+
+  ```python
+  minimum <= value <= maximum
+  ```
+
 - Account for iterable and validation edge cases:
   - Iterate once because an input may be a generator.
   - Validate before constructing a record.

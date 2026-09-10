@@ -8,10 +8,19 @@ projection so downstream code reads only the rows and fields it needs.
 
 ## Learn before coding
 
-An Arrow table can be built with `pa.table({"name": ["x"], "count": [2]})`;
-projection selects columns, while filtering selects rows. Parquet writing and
-reading use `pyarrow.parquet.write_table(table, path)` and
-`pyarrow.parquet.read_table(path, columns=["name"])`.
+An Arrow table can be built from column-oriented data:
+
+```python
+pa.table({"name": ["x"], "count": [2]})
+```
+
+Projection selects columns, while filtering selects rows. Parquet writing and
+reading use separate calls:
+
+```python
+pyarrow.parquet.write_table(table, path)
+pyarrow.parquet.read_table(path, columns=["name"])
+```
 
 - Prepare and query the table in order:
   - Build a table that matches the declared schema.

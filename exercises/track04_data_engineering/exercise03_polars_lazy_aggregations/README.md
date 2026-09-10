@@ -9,12 +9,30 @@ constraints at the boundary.
 
 ## Learn before coding
 
-Polars expressions build transformations: `events.lazy().with_columns(
-pl.col("amount").cast(pl.Float64))` is not executed until `.collect()`.
-`group_by(["day", "category"]).agg(pl.col("amount").sum())` creates grouped
-totals, and `.sort(["day", "category"])` makes their order explicit. For
-unrelated data, `pl.DataFrame({"kind": ["x"], "amount": [2]}).lazy()
-.select(pl.col("amount") + 1).collect()` adds one after collection.
+Polars expressions build transformations. This plan is not executed until
+`.collect()`:
+
+```python
+events.lazy().with_columns(pl.col("amount").cast(pl.Float64))
+```
+
+Grouping creates totals, and sorting makes their order explicit:
+
+```python
+grouped = frame.group_by(["day", "category"]).agg(pl.col("amount").sum())
+grouped.sort(["day", "category"])
+```
+
+For unrelated data, this chain adds one and then collects the result:
+
+```python
+(
+    pl.DataFrame({"kind": ["x"], "amount": [2]})
+    .lazy()
+    .select(pl.col("amount") + 1)
+    .collect()
+)
+```
 
 - Validate the lazy pipeline's boundaries:
   - Check required columns and values before or during the plan.

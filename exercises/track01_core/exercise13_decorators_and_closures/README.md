@@ -9,10 +9,23 @@ callable's metadata available.
 ## Learn before coding
 
 A decorator receives a function and returns a wrapper:
-`def decorate(function):` followed by `def wrapper(value): return function(value)`
-and `return wrapper`. A closure keeps variables from the enclosing call, so a
-`cache = {}` created when decorating can be reused by later calls. For example,
-a square function can cache its integer results.
+
+```python
+def decorate(function):
+    def wrapper(value):
+        return function(value)
+
+    return wrapper
+```
+
+A closure keeps variables from the enclosing call, so a cache created when
+decorating can be reused by later calls:
+
+```python
+cache = {}
+```
+
+For example, a square function can cache its integer results.
 
 - A caching wrapper should:
   - Check the cache before calling the wrapped function.

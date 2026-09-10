@@ -8,10 +8,27 @@ Checking exceptional rules first often keeps the remaining calculation simple.
 
 ## Learn before coding
 
-Comparisons produce booleans: `is_open = hour < 18`, and `if is_open and
-has_ticket:` requires both conditions. Use `elif` for mutually exclusive
-choices and `else` for the remaining case; `not ready` reverses a boolean.
-For example, `if score >= 80: label = "high"` checks the boundary inclusively.
+Comparisons produce booleans. For example, assign the result of a comparison:
+
+```python
+is_open = hour < 18
+```
+
+Then combine that boolean with another condition:
+
+```python
+if is_open and has_ticket:
+    pass
+```
+
+Because this condition uses `and`, both `is_open` and `has_ticket` are required.
+Use `elif` for mutually exclusive choices and `else` for the remaining case;
+`not ready` reverses a boolean. This condition checks its boundary inclusively:
+
+```python
+if score >= 80:
+    label = "high"
+```
 
 - Work through each boundary deliberately:
   - Make a table of the input ranges.

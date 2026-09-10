@@ -9,10 +9,24 @@ a safe scale so transformation never divides by zero.
 
 ## Learn before coding
 
-Convert input with `np.asarray(values, dtype=np.float64)` and use `axis=0`
-for one statistic per feature column. Standard scaling is
-`(values - mean) / scale`; `np.mean([[1, 3], [5, 7]], axis=0)` computes
-column means.
+Convert input to a floating-point array:
+
+```python
+np.asarray(values, dtype=np.float64)
+```
+
+Use `axis=0` for one statistic per feature column. Standard scaling applies
+this formula:
+
+```python
+(values - mean) / scale
+```
+
+For example, this call computes column means:
+
+```python
+np.mean([[1, 3], [5, 7]], axis=0)
+```
 
 - Keep fitting and transformation separate:
   - Fit parameters from training rows only.

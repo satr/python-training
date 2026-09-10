@@ -8,11 +8,18 @@ commits or rolls back.
 
 ## Learn before coding
 
-Use a parameterized SQLite statement such as
-`connection.execute("INSERT INTO items (name) VALUES (?)", (name,))`; the
-placeholder keeps data separate from SQL. A context manager or explicit
-transaction groups schema and inserts, and `connection.rollback()` undoes a
-failed transaction.
+Use a parameterized SQLite statement:
+
+```python
+connection.execute("INSERT INTO items (name) VALUES (?)", (name,))
+```
+
+The placeholder keeps data separate from SQL. A context manager or explicit
+transaction groups schema and inserts. Roll back a failed transaction:
+
+```python
+connection.rollback()
+```
 
 - Plan the warehouse flow:
   - Define the schema and uniqueness constraint.

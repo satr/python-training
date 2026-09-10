@@ -25,16 +25,32 @@ text = f"{quantity} x {item} costs ${unit_price:.2f}"
 
 ## Learn before coding
 
-Keep calculations in named intermediate values: `subtotal = count * price`
-multiplies two numbers, and `tax = subtotal * rate` uses the result in a
-second expression. An f-string such as `f"{city} has {count} buses"` inserts
-the values of `city` and `count` at the brace expressions; the braces are not
-printed. A format specifier follows a colon, so `f"{temperature:.2f}"` shows
-two digits after the decimal point. Try these unrelated examples first, then
-write the exercise's calculation in small steps and format only at the final
-string boundary. Remember that multiplication produces a numeric intermediate
-value, while formatting produces text; do not round early or confuse a string
-with a number.
+Keep calculations in named intermediate values:
+
+```python
+subtotal = count * price
+tax = subtotal * rate
+```
+
+The first expression multiplies two numbers, and the second uses that result.
+An f-string inserts values at its brace expressions; the braces are not
+printed:
+
+```python
+f"{city} has {count} buses"
+```
+
+A format specifier follows a colon, so this expression shows two digits after
+the decimal point:
+
+```python
+f"{temperature:.2f}"
+```
+
+Try these unrelated examples first, then write the exercise's calculation in
+small steps and format only at the final string boundary. Remember that
+multiplication produces a numeric intermediate value, while formatting produces
+text; do not round early or confuse a string with a number.
 
 ```python
 count = 3

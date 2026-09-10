@@ -8,10 +8,23 @@ are consumed.
 
 ## Learn before coding
 
-`concurrent.futures.ThreadPoolExecutor(max_workers=2)` runs submitted callables
-with at most two workers. `executor.map(function, [2, 4, 6])` applies a
-function and yields results in input order even if work finishes differently.
-For example, mapping `lambda n: n * 10` produces three corresponding values.
+This executor runs submitted callables with at most two workers:
+
+```python
+concurrent.futures.ThreadPoolExecutor(max_workers=2)
+```
+
+Its `map` method applies a function and yields results in input order even if
+work finishes differently:
+
+```python
+executor.map(function, [2, 4, 6])
+```
+For example, mapping this function produces three corresponding values:
+
+```python
+lambda number: number * 10
+```
 
 - Manage the executor and inputs carefully:
   - Validate a positive worker count before submitting work.

@@ -9,10 +9,18 @@ must be created per object so instances do not accidentally share state.
 ## Learn before coding
 
 `@dataclass` generates an initializer for fields, so `Point(2, 3)` can create
-an object with `point.x` and `point.y`; a default such as `done: bool = False`
-is used when omitted. A container class keeps private state on `self`, for
-example `self.items = []`, and methods update that state through
-`self.items.append(...)`.
+an object with `point.x` and `point.y`. A field can declare a default:
+
+```python
+done: bool = False
+```
+
+A container class keeps private state on `self`, for example:
+
+```python
+self.items = []
+self.items.append(new_item)
+```
 
 - Plan each operation in stages:
   - Look up existing state.

@@ -8,10 +8,15 @@ breaking, and top-k behavior.
 
 ## Learn before coding
 
-For vectors `a` and `b`, the dot product is `sum(x * y for x, y in zip(a,
-b))`; the Euclidean norm is `sqrt(sum(x * x for x in a))`. Cosine similarity
-divides the dot product by both norms, so `[1, 0]` and `[0, 1]` are
-orthogonal.
+For vectors `a` and `b`, calculate the dot product and Euclidean norm with:
+
+```python
+sum(x * y for x, y in zip(a, b))
+sqrt(sum(x * x for x in a))
+```
+
+Cosine similarity divides the dot product by both norms, so `[1, 0]` and
+`[0, 1]` are orthogonal.
 
 - Validate vector edge cases:
   - Require equal, non-empty lengths.

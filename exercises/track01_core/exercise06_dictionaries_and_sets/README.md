@@ -8,11 +8,16 @@ a set-derived result makes its order deterministic.
 
 ## Learn before coding
 
-Use `counts[word] = counts.get(word, 0) + 1` to update a dictionary counter;
-`.get` supplies a value when a key is absent. Sets remove duplicates, and
-`left & right` is their intersection. For example, counting `["red", "blue",
-"red"]` gives `{"red": 2, "blue": 1}`, while `{"a", "b"} & {"b", "c"}`
-contains only `"b"`.
+Use this assignment to update a dictionary counter:
+
+```python
+counts[word] = counts.get(word, 0) + 1
+```
+
+The `.get` method supplies a value when a key is absent. Sets remove duplicates,
+and `left & right` is their intersection. For example, counting `["red",
+"blue", "red"]` gives `{"red": 2, "blue": 1}`, while `{"a", "b"} & {"b",
+"c"}` contains only `"b"`.
 
 - Keep collection behavior predictable:
   - Build counters in input order when output order matters.

@@ -9,13 +9,23 @@ overrides last. Validate and convert values at the boundary.
 ## Learn before coding
 
 - Represent precedence explicitly:
-  - Start with a default such as `port = 8000`.
+  - Start with a default:
+
+    ```python
+    port = 8000
+    ```
+
   - Replace it when an environment key is present.
   - Replace it again when an override contains that key.
 
-Convert environment text with `int("9000")`, but accept an already-typed
-override only after checking its type. For example, a `debug` override should
-win over an environment `"false"`.
+Convert environment text before using it:
+
+```python
+int("9000")
+```
+
+Accept an already-typed override only after checking its type. For example, a
+`debug` override should win over an environment `"false"`.
 
 - Once precedence is resolved:
   - Validate the winning value once.

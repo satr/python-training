@@ -10,17 +10,33 @@ explicit.
 
 ## Learn before coding
 
-Convert arrays with `torch.tensor(values, dtype=torch.float32)` and keep one
-row per example. A linear model produces logits; `torch.sigmoid(logits)` maps
-them to probabilities between zero and one. Binary cross-entropy with logits
-combines these steps safely.
+Convert arrays while keeping one row per example:
+
+```python
+torch.tensor(values, dtype=torch.float32)
+```
+
+A linear model produces logits. This operation maps them to probabilities
+between zero and one:
+
+```python
+torch.sigmoid(logits)
+```
+
+Binary cross-entropy with logits combines these steps safely.
 
 - Follow the training loop in order:
   - Validate shapes, labels, epochs, and learning rate.
   - Set a deterministic seed before initialization.
   - Create CPU tensors and parameters.
   - Compute loss.
-  - Call `optimizer.zero_grad()`, `loss.backward()`, and `optimizer.step()`.
+  - Run the optimizer sequence in order:
+
+    ```python
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+    ```
   - Record the requested values.
 - Do not change caller arrays.
 

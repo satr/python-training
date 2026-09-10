@@ -25,7 +25,7 @@ for _ in range(count):
 
 - Decide exactly what each recorded snapshot represents:
   - Choose whether to record before or after each update.
-  - For example, repeatedly add `5` to `current = 10` and record three projections.
+  - For example, start at `10`, repeatedly add `5`, and record three projections.
   - Define the behavior for zero and negative counts.
   - Decide whether the initial value belongs in the returned sequence.
   - Create a fresh result list for each call instead of reusing mutable state.

@@ -8,13 +8,27 @@ enough to read at a glance.
 
 ## Learn before coding
 
-A dictionary comprehension looks like
-`{key: value * 0.9 for key, value in prices.items()}`; a list comprehension
-can filter with `[name for name in names if name.startswith("A")]`.
-For unrelated data, `{n: n * n for n in [2, 3]}` maps each input and
-`[n for n in [2, 5, 8] if n > 4]` keeps selected values. First write the
-equivalent loop, then identify the transformed value and filter before
-shortening it.
+A dictionary comprehension can transform every value:
+
+```python
+{key: value * 0.9 for key, value in prices.items()}
+```
+
+A list comprehension can filter:
+
+```python
+[name for name in names if name.startswith("A")]
+```
+
+For unrelated data, these examples map each input and keep selected values:
+
+```python
+{n: n * n for n in [2, 3]}
+[n for n in [2, 5, 8] if n > 4]
+```
+
+First write the equivalent loop, then identify the transformed value and filter
+before shortening it.
 
 - Preserve collection behavior:
   - Create a new result rather than changing the input dictionary.

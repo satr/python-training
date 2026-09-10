@@ -8,11 +8,19 @@ tests do not depend on the process command line.
 
 ## Learn before coding
 
-`argparse.ArgumentParser` defines a command-line interface:
-`parser.add_argument("--name", default="reader")` supplies a default, while
-`type=int` converts text such as `"3"` to an integer. Parse an explicit list
-with `parser.parse_args(["--name", "Ada"])`; this makes tests independent of
-the process command line.
+`argparse.ArgumentParser` defines a command-line interface. This call supplies
+a default:
+
+```python
+parser.add_argument("--name", default="reader")
+```
+
+The `type=int` argument converts text such as `"3"` to an integer. Parse an
+explicit list to make tests independent of the process command line:
+
+```python
+parser.parse_args(["--name", "Ada"])
+```
 
 - Keep command handling in separate stages:
   - Build the parser.

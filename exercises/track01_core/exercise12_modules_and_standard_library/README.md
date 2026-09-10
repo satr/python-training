@@ -8,10 +8,21 @@ weekday information, so application code can compose those tools.
 
 ## Learn before coding
 
-`date.fromisoformat("2030-04-09")` parses an ISO date and raises
-`ValueError` for malformed text. `day.weekday()` returns Monday as `0` through
-Sunday as `6`; `day + timedelta(days=1)` advances one day. A reusable
-business-day loop has three steps:
+This standard-library call parses an ISO date and raises `ValueError` for
+malformed text:
+
+```python
+date.fromisoformat("2030-04-09")
+```
+
+The `day.weekday()` method returns Monday as `0` through Sunday as `6`. Date
+arithmetic advances one day:
+
+```python
+day + timedelta(days=1)
+```
+
+A reusable business-day loop has three steps:
 
 - Follow the business-day procedure:
   - Start with the next calendar day.

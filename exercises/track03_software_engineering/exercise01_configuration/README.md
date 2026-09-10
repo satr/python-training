@@ -7,8 +7,17 @@ a typed object, validate cross-field constraints, and never log secrets.
 
 ## Learn before coding
 
-Environment mappings contain strings: `int("8080")` creates a port number and
-`value.lower() in {"1", "true", "yes"}` can recognize a boolean spelling.
+Environment mappings contain strings. Conversion creates a port number:
+
+```python
+int("8080")
+```
+
+A membership test can recognize a boolean spelling:
+
+```python
+value.lower() in {"1", "true", "yes"}
+```
 
 - Build the typed dataclass only after preparation succeeds:
   - Read defaults and require fields.

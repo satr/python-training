@@ -8,9 +8,14 @@ type checkers to recognize structurally compatible objects.
 
 ## Learn before coding
 
-`first_matching([3, 8, 11], lambda number: number % 2 == 0)` calls the
-predicate on each value and returns the first match, or `None` after the
-iteration ends. A `Protocol` describes behavior rather than inheritance:
+This call tests each value and returns the first match, or `None` after the
+iteration ends:
+
+```python
+first_matching([3, 8, 11], lambda number: number % 2 == 0)
+```
+
+A `Protocol` describes behavior rather than inheritance:
 anything with `describe(self) -> str` can satisfy `Describable`.
 
 - To find a match:
