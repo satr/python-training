@@ -33,6 +33,8 @@ at `01`.
     wrapped callables, retained state, metadata, and memoization.
 14. [Typing and protocols](track01_core/exercise14_typing_and_protocols) -
     generics, callables, structural typing, and iterable APIs.
+15. [Command-line arguments](track01_core/exercise15_command_line_arguments) -
+     `argparse` positional and optional parameters with testable `argv`.
 
 ## 02 Concurrency and async
 
@@ -47,6 +49,8 @@ at `01`.
    environment parsing and actionable errors.
 2. [Order service](track03_software_engineering/exercise02_order_service) - protocols,
    dependency injection, domain rules, and test doubles.
+3. [Configuration precedence](track03_software_engineering/exercise03_configuration_precedence) -
+   defaults, environment variables, explicit overrides, and typed validation.
 
 ## 04 Data engineering
 
@@ -76,7 +80,7 @@ Exercises should be added in this order:
 
 | Track | Planned progression |
 | --- | --- |
-| Core | completed beginner sequence; future additions can cover command-line programs, packaging, and network I/O |
+| Core | completed beginner sequence; future additions can cover packaging and network I/O |
 | Concurrency | locks and race conditions; process pools; async cancellation; timeouts and retries; rate limiting; producer/consumer backpressure |
 | Software engineering | pytest fixtures and parametrization; property testing; CLI design; HTTP APIs; clean architecture; logging and metrics; profiling; security; packaging and releases |
 | Data engineering | CSV/JSON/Parquet; pandas and Polars; SQLAlchemy; migrations; incremental ETL; data contracts; partitioning; Kafka; orchestration; distributed processing |

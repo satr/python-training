@@ -56,6 +56,8 @@ When adding an exercise:
   implementation, verification, validation, and security gates.
 - 2026-09-10: Expanded Core Python into a concept-first, 14-exercise beginner
   curriculum.
+- 2026-09-10: Added optional arguments, a testable argparse exercise, and
+  configuration precedence with typed validation.
 - 2026-09-10: Added Polars and Parquet data pipelines plus NumPy scaling and a
   deterministic CPU-only PyTorch classifier.
 - Next: continue the concurrency and async track.

@@ -9,8 +9,9 @@ composed so one operation builds on another.
 ## Task
 
 Implement `percentage` and use it from `split_bill`. The default tip is 15
-percent and `people` is keyword-only with a default of 1. Raise `ValueError`
-when `people` is not positive.
+percent, while `people` and the optional discount are keyword-only. Their
+defaults are 1 person and no discount. Raise `ValueError` when `people` is not
+positive or the discount is outside 0 through 100 percent.
 
 ## Run
 

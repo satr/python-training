@@ -19,3 +19,4 @@ Work through the exercises in order:
 12. [Modules and standard library](exercise12_modules_and_standard_library)
 13. [Decorators and closures](exercise13_decorators_and_closures)
 14. [Typing and protocols](exercise14_typing_and_protocols)
+15. [Command-line arguments](exercise15_command_line_arguments)

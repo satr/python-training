@@ -6,8 +6,10 @@
 	01_core_09_exceptions_and_validation 01_core_10_iterators_and_generators \
 	01_core_11_files_and_context_managers 01_core_12_modules_and_standard_library \
 	01_core_13_decorators_and_closures 01_core_14_typing_and_protocols \
+	01_core_15_command_line_arguments \
 	02_concurrency_01_bounded_map 02_concurrency_02_async_pipeline \
 	03_software_engineering_01_configuration 03_software_engineering_02_order_service \
+	03_software_engineering_03_configuration_precedence \
 	04_data_engineering_01_normalize_events 04_data_engineering_02_sqlite_warehouse \
 	04_data_engineering_03_polars_lazy_aggregations \
 	04_data_engineering_04_parquet_projection \
@@ -37,10 +39,12 @@ help:
 	  '01_core_12_modules_and_standard_library  Test Modules and standard library' \
 	  '01_core_13_decorators_and_closures  Test Decorators and closures' \
 	  '01_core_14_typing_and_protocols  Test Typing and protocols' \
+	  '01_core_15_command_line_arguments  Test Command-line arguments' \
 	  '02_concurrency_01_bounded_map  Test Bounded map' \
 	  '02_concurrency_02_async_pipeline  Test Async pipeline' \
 	  '03_software_engineering_01_configuration  Test Configuration' \
 	  '03_software_engineering_02_order_service  Test Order service' \
+	  '03_software_engineering_03_configuration_precedence  Test Configuration precedence' \
 	  '04_data_engineering_01_normalize_events  Test Normalize events' \
 	  '04_data_engineering_02_sqlite_warehouse  Test SQLite warehouse' \
 	  '04_data_engineering_03_polars_lazy_aggregations  Test Polars lazy aggregations' \
@@ -114,6 +118,9 @@ check: layout lint typecheck test
 01_core_14_typing_and_protocols:
 	"$(PYTHON)" -m pytest exercises/track01_core/exercise14_typing_and_protocols/test_solution.py
 
+01_core_15_command_line_arguments:
+	"$(PYTHON)" -m pytest exercises/track01_core/exercise15_command_line_arguments/test_solution.py
+
 02_concurrency_01_bounded_map:
 	"$(PYTHON)" -m pytest exercises/track02_concurrency_async/exercise01_bounded_map/test_solution.py
 
@@ -125,6 +132,9 @@ check: layout lint typecheck test
 
 03_software_engineering_02_order_service:
 	"$(PYTHON)" -m pytest exercises/track03_software_engineering/exercise02_order_service/test_solution.py
+
+03_software_engineering_03_configuration_precedence:
+	"$(PYTHON)" -m pytest exercises/track03_software_engineering/exercise03_configuration_precedence/test_solution.py
 
 04_data_engineering_01_normalize_events:
 	"$(PYTHON)" -m pytest exercises/track04_data_engineering/exercise01_normalize_events/test_solution.py
