@@ -24,7 +24,7 @@ make check
 Run one exercise:
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise01_measurements
+make exercise EXERCISE=exercises/track01_core/exercise01_values_and_strings
 ```
 
 Optional ecosystem libraries used by later data and AI extensions can be
@@ -34,5 +34,5 @@ installed with:
 python -m pip install -e ".[data,ai]"
 ```
 
-The initial exercises intentionally use the standard library so the complete
+The core exercises intentionally use the standard library so the complete
 training suite remains fast and portable.

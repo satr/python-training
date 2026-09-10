@@ -19,13 +19,13 @@ Every exercise contains:
 To practise an exercise, replace `solution.py` with its `TODO.py` template:
 
 ```bash
-make reset EXERCISE=exercises/track01_core/exercise01_measurements
+make reset EXERCISE=exercises/track01_core/exercise01_values_and_strings
 ```
 
 Then implement the missing behavior and run:
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise01_measurements
+make exercise EXERCISE=exercises/track01_core/exercise01_values_and_strings
 ```
 
 `make reset-all` resets every exercise and requires explicit confirmation.
@@ -40,9 +40,10 @@ make exercise EXERCISE=exercises/track01_core/exercise01_measurements
 | [04 Data engineering](exercises/track04_data_engineering) | Files, SQL, ETL, validation, pipelines, orchestration concepts |
 | [05 AI applications](exercises/track05_ai_applications) | ML foundations, embeddings, retrieval, evaluation, production patterns |
 
-The repository starts with representative exercises in every track. The
-[roadmap](exercises/README.md#roadmap) lists the next exercises in learning
-order so the course can grow without losing its progression.
+The core track provides a complete beginner sequence, while the other tracks
+start with representative exercises. The
+[roadmap](exercises/README.md#roadmap) shows how the course can grow without
+losing its progression.
 
 ## Quick start
 
