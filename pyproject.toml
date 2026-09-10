@@ -25,8 +25,11 @@ data = [
     "sqlalchemy>=2.0",
 ]
 ai = [
-    "numpy>=2.2",
+    "numpy>=2.2,<2.5",
     "scikit-learn>=1.6",
+]
+pytorch = [
+    "torch>=2.6",
 ]
 
 [tool.setuptools.packages.find]
@@ -51,3 +54,7 @@ select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
 python_version = "3.11"
 strict = true
 exclude = ["(?x)(/TODO\\.py$|/test_solution\\.py$)"]
+
+[[tool.mypy.overrides]]
+module = ["pyarrow", "pyarrow.*"]
+ignore_missing_imports = true

@@ -40,8 +40,8 @@ the complete list.
 | [01 Core Python](exercises/track01_core) | Types, control flow, functions, collections, errors, iterators, OOP, typing |
 | [02 Concurrency and async](exercises/track02_concurrency_async) | Threads, processes, asyncio, queues, cancellation |
 | [03 Software engineering](exercises/track03_software_engineering) | Testing, architecture, APIs, configuration, observability |
-| [04 Data engineering](exercises/track04_data_engineering) | Files, SQL, ETL, validation, pipelines, orchestration concepts |
-| [05 AI applications](exercises/track05_ai_applications) | ML foundations, embeddings, retrieval, evaluation, production patterns |
+| [04 Data engineering](exercises/track04_data_engineering) | Files, SQL, Polars, Arrow, Parquet, validation, pipelines |
+| [05 AI applications](exercises/track05_ai_applications) | NumPy, PyTorch, ML foundations, retrieval, evaluation, production patterns |
 
 The core track provides a complete beginner sequence, while the other tracks
 start with representative exercises. The
@@ -55,9 +55,12 @@ Python 3.11 or newer is required.
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install -e ".[dev]"
+python -m pip install -e ".[dev,data,ai,pytorch]"
 make check
 ```
+
+Install only the extras needed for the exercises you are running when a
+lightweight environment is preferred.
 
 See [INSTALL.md](INSTALL.md) for platform notes and [AGENTS.md](AGENTS.md) for
 the exercise-authoring and AI-assistant workflow.

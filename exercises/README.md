@@ -54,6 +54,10 @@ at `01`.
    normalization, timestamps, deduplication, and data quality.
 2. [SQLite warehouse](track04_data_engineering/exercise02_sqlite_warehouse) - parameterized
    SQL, idempotent loads, transactions, and aggregation.
+3. [Polars lazy aggregations](track04_data_engineering/exercise03_polars_lazy_aggregations) -
+   typed frames, lazy queries, grouped metrics, and deterministic output.
+4. [Parquet projection](track04_data_engineering/exercise04_parquet_projection) -
+   Arrow schemas, local Parquet I/O, time filters, and column projection.
 
 ## 05 AI applications
 
@@ -61,6 +65,10 @@ at `01`.
    ranking, and deterministic retrieval.
 2. [Retrieval evaluation](track05_ai_applications/exercise02_retrieval_evaluation) -
    precision, recall, mean reciprocal rank, and evaluation datasets.
+3. [NumPy feature scaling](track05_ai_applications/exercise03_numpy_feature_scaling) -
+   fitted statistics, immutable parameters, constant columns, and leakage prevention.
+4. [PyTorch binary classifier](track05_ai_applications/exercise04_pytorch_binary_classifier) -
+   tensors, logits, loss functions, gradient descent, and reproducibility.
 
 ## Roadmap
 

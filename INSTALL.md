@@ -29,12 +29,19 @@ make 01_core_01_values_and_strings
 
 Run `make help` to see the dedicated target for every exercise.
 
-Optional ecosystem libraries used by later data and AI extensions can be
-installed with:
+Optional ecosystem libraries used by the data and lightweight AI exercises
+can be installed with:
 
 ```bash
 python -m pip install -e ".[data,ai]"
 ```
 
-The core exercises intentionally use the standard library so the complete
-training suite remains fast and portable.
+PyTorch is separate so the `ai` extra stays lightweight:
+
+```bash
+python -m pip install -e ".[ai,pytorch]"
+```
+
+Install all exercise and validation dependencies with
+`python -m pip install -e ".[dev,data,ai,pytorch]"`. Core exercises
+intentionally use the standard library and remain fast and portable.

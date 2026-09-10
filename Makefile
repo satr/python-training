@@ -9,7 +9,11 @@
 	02_concurrency_01_bounded_map 02_concurrency_02_async_pipeline \
 	03_software_engineering_01_configuration 03_software_engineering_02_order_service \
 	04_data_engineering_01_normalize_events 04_data_engineering_02_sqlite_warehouse \
-	05_ai_applications_01_vector_search 05_ai_applications_02_retrieval_evaluation
+	04_data_engineering_03_polars_lazy_aggregations \
+	04_data_engineering_04_parquet_projection \
+	05_ai_applications_01_vector_search 05_ai_applications_02_retrieval_evaluation \
+	05_ai_applications_03_numpy_feature_scaling \
+	05_ai_applications_04_pytorch_binary_classifier
 
 PYTHON ?= python
 export EXERCISE
@@ -39,8 +43,12 @@ help:
 	  '03_software_engineering_02_order_service  Test Order service' \
 	  '04_data_engineering_01_normalize_events  Test Normalize events' \
 	  '04_data_engineering_02_sqlite_warehouse  Test SQLite warehouse' \
+	  '04_data_engineering_03_polars_lazy_aggregations  Test Polars lazy aggregations' \
+	  '04_data_engineering_04_parquet_projection  Test Parquet projection' \
 	  '05_ai_applications_01_vector_search  Test Vector search' \
 	  '05_ai_applications_02_retrieval_evaluation  Test Retrieval evaluation' \
+	  '05_ai_applications_03_numpy_feature_scaling  Test NumPy feature scaling' \
+	  '05_ai_applications_04_pytorch_binary_classifier  Test PyTorch binary classifier' \
 	  'reset EXERCISE=<dir>     Restore one solution from TODO.py' \
 	  'reset-all                Restore every solution (destructive)'
 
@@ -124,11 +132,23 @@ check: layout lint typecheck test
 04_data_engineering_02_sqlite_warehouse:
 	$(PYTHON) -m pytest exercises/track04_data_engineering/exercise02_sqlite_warehouse/test_solution.py
 
+04_data_engineering_03_polars_lazy_aggregations:
+	$(PYTHON) -m pytest exercises/track04_data_engineering/exercise03_polars_lazy_aggregations/test_solution.py
+
+04_data_engineering_04_parquet_projection:
+	$(PYTHON) -m pytest exercises/track04_data_engineering/exercise04_parquet_projection/test_solution.py
+
 05_ai_applications_01_vector_search:
 	$(PYTHON) -m pytest exercises/track05_ai_applications/exercise01_vector_search/test_solution.py
 
 05_ai_applications_02_retrieval_evaluation:
 	$(PYTHON) -m pytest exercises/track05_ai_applications/exercise02_retrieval_evaluation/test_solution.py
+
+05_ai_applications_03_numpy_feature_scaling:
+	$(PYTHON) -m pytest exercises/track05_ai_applications/exercise03_numpy_feature_scaling/test_solution.py
+
+05_ai_applications_04_pytorch_binary_classifier:
+	$(PYTHON) -m pytest exercises/track05_ai_applications/exercise04_pytorch_binary_classifier/test_solution.py
 
 reset:
 	$(if $(EXERCISE),,$(error Set EXERCISE=<exercise-directory>))
