@@ -29,6 +29,10 @@ make 01_core_01_values_and_strings
 
 Run `make help` to see the dedicated target for every exercise.
 
+Make targets use `.venv/bin/python` automatically when that interpreter exists;
+otherwise they fall back to `python3`. Set `PYTHON` to use a different
+interpreter explicitly.
+
 Optional ecosystem libraries used by the data and lightweight AI exercises
 can be installed with:
 
