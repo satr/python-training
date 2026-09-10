@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-training"
+version = "0.1.0"
+description = "Exercise-driven Python, data engineering, and AI training"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Sergey Smolnikov" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "mypy>=1.15",
+    "pytest>=8.3",
+    "ruff>=0.11",
+]
+data = [
+    "pandas>=2.2",
+    "polars>=1.26",
+    "pyarrow>=19",
+    "sqlalchemy>=2.0",
+]
+ai = [
+    "numpy>=2.2",
+    "scikit-learn>=1.6",
+]
+
+[tool.setuptools.packages.find]
+include = ["exercises*"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers"
+testpaths = ["exercises"]
+markers = [
+    "integration: requires an external service or infrastructure",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+extend-exclude = ["**/TODO.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+exclude = ["(?x)(/TODO\\.py$|/test_solution\\.py$)"]
