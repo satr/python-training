@@ -6,6 +6,17 @@
 separate from program behavior, and accept an explicit `argv` in functions so
 tests do not depend on the process command line.
 
+## Learn before coding
+
+`argparse.ArgumentParser` defines a command-line interface:
+`parser.add_argument("--name", default="reader")` supplies a default, while
+`type=int` converts text such as `"3"` to an integer. Parse an explicit list
+with `parser.parse_args(["--name", "Ada"])`; this makes tests independent of
+the process command line. Keep the stages separate: build the parser, parse,
+render, then let `main` return a status code. Add bounds with an appropriate
+parser action or check, distinguish omitted options from supplied ones, and
+let argparse handle invalid input rather than printing from helper functions.
+
 ## Task
 
 Build a parser with the positional `name` argument and the optional `--count`

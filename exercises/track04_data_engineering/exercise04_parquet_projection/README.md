@@ -6,6 +6,17 @@ Arrow schemas make column names, physical types, nullability, and timestamp
 zones explicit. Parquet readers can combine predicate filtering with column
 projection so downstream code reads only the rows and fields it needs.
 
+## Learn before coding
+
+An Arrow table can be built with `pa.table({"name": ["x"], "count": [2]})`;
+projection selects columns, while filtering selects rows. Parquet writing and
+reading use `pyarrow.parquet.write_table(table, path)` and
+`pyarrow.parquet.read_table(path, columns=["name"])`. Build a table that
+matches the declared schema, validate requested column names and start/end
+bounds, normalize datetimes to UTC, then filter the half-open window and
+project columns. Do not confuse an empty result with an invalid interval, and
+avoid implicit timestamp or schema conversions that change the data contract.
+
 ## Task
 
 Implement `build_event_table`, `write_event_table`, and `read_event_window`.

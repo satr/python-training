@@ -24,6 +24,9 @@ validation, or security. Keep each handoff scoped and include the user goal,
 known constraints, changed files, and prior gate evidence. Do not ask agents
 to repeat repository-wide exploration.
 
+For exercise changes, require the README to explain the relevant concepts
+before the task and keep that preparation free of final implementations.
+
 Treat secrets, credentials, tokens, personal data, private URLs, customer
 data, and proprietary content as sensitive. Never include their values in
 prompts, logs, handoffs, patches, or final output. Redact discovered values as

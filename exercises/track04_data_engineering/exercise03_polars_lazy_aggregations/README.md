@@ -7,6 +7,18 @@ optimize projection, grouping, and sorting while keeping transformation code
 declarative. Reliable pipelines also validate their input schema and quality
 constraints at the boundary.
 
+## Learn before coding
+
+Polars expressions build transformations: `events.lazy().with_columns(
+pl.col("amount").cast(pl.Float64))` is not executed until `.collect()`.
+`group_by(["day", "category"]).agg(pl.col("amount").sum())` creates grouped
+totals, and `.sort(["day", "category"])` makes their order explicit. For
+unrelated data, `pl.DataFrame({"kind": ["x"], "amount": [2]}).lazy()
+.select(pl.col("amount") + 1).collect()` adds one after collection. Validate
+required columns and values before or during the lazy plan, reject null,
+blank, non-finite, and timezone cases as required by the contract, and do not
+assume lazy expressions run immediately.
+
 ## Task
 
 Implement `daily_category_totals`. Accept a Polars `DataFrame` with

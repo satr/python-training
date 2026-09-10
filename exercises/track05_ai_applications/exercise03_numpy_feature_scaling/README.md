@@ -7,6 +7,16 @@ statistics for validation, test, and production inputs. Re-fitting on later
 data leaks information and makes evaluation unreliable. Constant columns need
 a safe scale so transformation never divides by zero.
 
+## Learn before coding
+
+Convert input with `np.asarray(values, dtype=np.float64)` and use `axis=0`
+for one statistic per feature column. Standard scaling is
+`(values - mean) / scale`; `np.mean([[1, 3], [5, 7]], axis=0)` computes
+column means. Fit parameters from training rows only, replace a zero
+population scale according to the contract, and apply saved parameters to
+later rows. Validate two-dimensional, finite, compatible arrays, and copy
+inputs when a transformation must not mutate caller data.
+
 ## Task
 
 Implement `ScalingParameters`, `fit_scaler`, and `transform_features`. Fit

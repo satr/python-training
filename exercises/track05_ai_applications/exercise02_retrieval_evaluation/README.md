@@ -6,6 +6,17 @@ Retrieval quality must be measured on a representative labeled dataset.
 Precision@k measures result relevance, recall@k measures relevant-item
 coverage, and reciprocal rank rewards placing the first relevant result early.
 
+## Learn before coding
+
+For ranked IDs, precision at `k` is relevant hits in the first `k` results
+divided by the number examined, while recall divides hits by all relevant
+IDs. Reciprocal rank is `1 / position` for the first relevant result, or
+zero if none appears. For example, retrieved `("b", "a")`, relevant
+`{"a"}`, and `k=2` has one hit and first relevant position two. Clamp the
+ranking to `k`, decide how duplicate IDs count from the contract, handle an
+empty relevant set consistently, then average each metric across cases;
+validate `k` before indexing.
+
 ## Task
 
 Implement per-query metrics and macro averages. Handle short rankings,
