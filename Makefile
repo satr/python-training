@@ -15,7 +15,7 @@
 	05_ai_applications_03_numpy_feature_scaling \
 	05_ai_applications_04_pytorch_binary_classifier
 
-PYTHON ?= $(if $(wildcard .venv/bin/python),.venv/bin/python,python3)
+PYTHON ?= $(if $(filter Windows_NT,$(OS)),$(if $(wildcard .venv/Scripts/python.exe),.venv/Scripts/python.exe,python),$(if $(wildcard .venv/bin/python),.venv/bin/python,python3))
 export EXERCISE
 
 help:

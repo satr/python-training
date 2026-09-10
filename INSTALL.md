@@ -9,8 +9,18 @@
 ## Environment
 
 ```bash
+# macOS/Linux
 python3 -m venv .venv
-source .venv/bin/activate       # Windows PowerShell: .venv\Scripts\Activate.ps1
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e ".[dev]"
+```
+
+In Windows PowerShell, create and activate the environment with:
+
+```powershell
+py -3 -m venv .venv
+.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 python -m pip install -e ".[dev]"
 ```
@@ -29,9 +39,10 @@ make 01_core_01_values_and_strings
 
 Run `make help` to see the dedicated target for every exercise.
 
-Make targets use `.venv/bin/python` automatically when that interpreter exists;
-otherwise they fall back to `python3`. Set `PYTHON` to use a different
-interpreter explicitly.
+Make targets use `.venv/bin/python` on macOS/Linux or
+`.venv/Scripts/python.exe` on Windows when that interpreter exists. Otherwise
+they fall back to `python3` on macOS/Linux or `python` on Windows. Set
+`PYTHON` to use a different interpreter explicitly.
 
 Optional ecosystem libraries used by the data and lightweight AI exercises
 can be installed with:

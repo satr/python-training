@@ -53,11 +53,16 @@ losing its progression.
 Python 3.11 or newer is required.
 
 ```bash
-python -m venv .venv
+# macOS/Linux
+python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -e ".[dev,data,ai,pytorch]"
 make check
 ```
+
+On Windows PowerShell, use `py -3 -m venv .venv` followed by
+`.venv\Scripts\Activate.ps1`; Make targets automatically select the Windows
+virtual-environment interpreter (or fall back to `python`).
 
 Install only the extras needed for the exercises you are running when a
 lightweight environment is preferred.
