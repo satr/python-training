@@ -16,7 +16,7 @@ empty list.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise05_lists_and_tuples
+make 01_core_05_lists_and_tuples
 ```
 
 ## Further practice

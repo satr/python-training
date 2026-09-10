@@ -22,11 +22,14 @@ To practise an exercise, replace `solution.py` with its `TODO.py` template:
 make reset EXERCISE=exercises/track01_core/exercise01_values_and_strings
 ```
 
-Then implement the missing behavior and run:
+Then implement the missing behavior and run its dedicated target:
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise01_values_and_strings
+make 01_core_01_values_and_strings
 ```
+
+Targets follow the `<track>_<number>_<exercise>` pattern; run `make help` for
+the complete list.
 
 `make reset-all` resets every exercise and requires explicit confirmation.
 

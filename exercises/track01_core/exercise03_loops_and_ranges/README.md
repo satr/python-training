@@ -15,7 +15,7 @@ month's resulting balance. Return an empty list for zero months and raise
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise03_loops_and_ranges
+make 01_core_03_loops_and_ranges
 ```
 
 ## Further practice

@@ -15,7 +15,7 @@ whose prices are less than or equal to `maximum`. Do not mutate the inputs.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise07_comprehensions
+make 01_core_07_comprehensions
 ```
 
 ## Further practice

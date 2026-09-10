@@ -14,7 +14,7 @@ IDs, calculate the total, and save exactly once through the repository.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track03_software_engineering/exercise02_order_service
+make 03_software_engineering_02_order_service
 ```
 
 ## Further practice

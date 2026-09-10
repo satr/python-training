@@ -16,7 +16,7 @@ and `pending` returns the titles of incomplete tasks in insertion order.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise08_classes_and_dataclasses
+make 01_core_08_classes_and_dataclasses
 ```
 
 ## Further practice

@@ -15,7 +15,7 @@ including 5 km, plus 1.50 for each kilometre beyond 5 km.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise02_conditionals_and_booleans
+make 01_core_02_conditionals_and_booleans
 ```
 
 ## Further practice

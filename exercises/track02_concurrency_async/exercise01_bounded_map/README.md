@@ -14,7 +14,7 @@ exactly once, preserve result ordering, and propagate task failures.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track02_concurrency_async/exercise01_bounded_map
+make 02_concurrency_01_bounded_map
 ```
 
 ## Further practice

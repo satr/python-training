@@ -17,7 +17,7 @@ at or below their reorder level, sorted by SKU.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise10_iterators_and_generators
+make 01_core_10_iterators_and_generators
 ```
 
 ## Further practice

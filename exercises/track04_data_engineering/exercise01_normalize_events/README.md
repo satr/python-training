@@ -15,7 +15,7 @@ event for each ID, and return chronological output.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track04_data_engineering/exercise01_normalize_events
+make 04_data_engineering_01_normalize_events
 ```
 
 ## Further practice

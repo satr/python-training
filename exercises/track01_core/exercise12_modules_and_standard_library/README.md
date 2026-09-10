@@ -15,7 +15,7 @@ and Sunday.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise12_modules_and_standard_library
+make 01_core_12_modules_and_standard_library
 ```
 
 ## Further practice

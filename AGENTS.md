@@ -11,7 +11,7 @@ software practices, data pipelines, and AI-enabled applications.
 1. Explain the relevant idea briefly before changing code.
 2. Let the learner attempt the task in `solution.py`.
 3. Prefer hints and review over immediately supplying the final answer.
-4. Run the focused exercise target after each change.
+4. Run the focused, dedicated exercise target after each change.
 5. Record meaningful learning progress in the progress log below.
 
 ## Exercise contract
@@ -40,7 +40,8 @@ When adding an exercise:
 
 ## Repository commands
 
-- `make exercise EXERCISE=<directory>` - run one exercise.
+- `make <track>_<number>_<exercise>` - run one exercise (use `make help` for
+  the complete target list).
 - `make test` - run all non-integration tests.
 - `make lint` - run Ruff.
 - `make typecheck` - run mypy.

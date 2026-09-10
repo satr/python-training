@@ -15,7 +15,7 @@ when `people` is not positive.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise04_functions_and_parameters
+make 01_core_04_functions_and_parameters
 ```
 
 ## Further practice

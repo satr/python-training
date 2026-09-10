@@ -15,7 +15,7 @@ implement `describe_all` for any iterable of compatible objects.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise14_typing_and_protocols
+make 01_core_14_typing_and_protocols
 ```
 
 ## Further practice

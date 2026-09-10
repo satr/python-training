@@ -24,8 +24,10 @@ make check
 Run one exercise:
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise01_values_and_strings
+make 01_core_01_values_and_strings
 ```
+
+Run `make help` to see the dedicated target for every exercise.
 
 Optional ecosystem libraries used by later data and AI extensions can be
 installed with:

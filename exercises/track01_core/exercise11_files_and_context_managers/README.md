@@ -16,7 +16,7 @@ of tasks consumed from the iterable.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise11_files_and_context_managers
+make 01_core_11_files_and_context_managers
 ```
 
 ## Further practice

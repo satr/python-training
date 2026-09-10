@@ -15,7 +15,7 @@ shown to two decimal places.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise01_values_and_strings
+make 01_core_01_values_and_strings
 ```
 
 ## Further practice

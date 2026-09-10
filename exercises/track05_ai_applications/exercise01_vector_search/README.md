@@ -14,7 +14,7 @@ Reject empty, mismatched, and zero vectors; rank ties by document ID.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track05_ai_applications/exercise01_vector_search
+make 05_ai_applications_01_vector_search
 ```
 
 ## Further practice

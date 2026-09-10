@@ -14,7 +14,7 @@ aggregate value totals by UTC date.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track04_data_engineering/exercise02_sqlite_warehouse
+make 04_data_engineering_02_sqlite_warehouse
 ```
 
 ## Further practice

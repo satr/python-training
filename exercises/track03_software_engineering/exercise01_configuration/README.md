@@ -13,7 +13,7 @@ database URL. Produce actionable `ConfigError` messages.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track03_software_engineering/exercise01_configuration
+make 03_software_engineering_01_configuration
 ```
 
 ## Further practice

@@ -14,7 +14,7 @@ duplicate retrieved IDs, empty relevant sets, and invalid `k` explicitly.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track05_ai_applications/exercise02_retrieval_evaluation
+make 05_ai_applications_02_retrieval_evaluation
 ```
 
 ## Further practice

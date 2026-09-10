@@ -17,7 +17,7 @@ one-shot generators.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise09_exceptions_and_validation
+make 01_core_09_exceptions_and_validation
 ```
 
 ## Further practice

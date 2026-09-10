@@ -14,7 +14,7 @@ sorted strings present in both input sets.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise06_dictionaries_and_sets
+make 01_core_06_dictionaries_and_sets
 ```
 
 ## Further practice

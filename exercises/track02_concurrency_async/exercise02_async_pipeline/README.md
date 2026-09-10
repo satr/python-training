@@ -14,7 +14,7 @@ Return results in input order even when processing completes out of order.
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track02_concurrency_async/exercise02_async_pipeline
+make 02_concurrency_02_async_pipeline
 ```
 
 ## Further practice

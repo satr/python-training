@@ -15,7 +15,7 @@ without caching exceptions, and preserve wrapped metadata. Use it with
 ## Run
 
 ```bash
-make exercise EXERCISE=exercises/track01_core/exercise13_decorators_and_closures
+make 01_core_13_decorators_and_closures
 ```
 
 ## Further practice
