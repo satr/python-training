@@ -60,7 +60,7 @@ install:
 	"$(PYTHON)" -m pip install -e ".[dev,data,ai,pytorch]"
 
 test:
-	"$(PYTHON)" -m pytest -m "not integration"
+	"$(PYTHON)" -m pytest --import-mode=importlib -m "not integration"
 
 lint:
 	"$(PYTHON)" -m ruff check .
@@ -69,7 +69,11 @@ format:
 	"$(PYTHON)" -m ruff format .
 
 typecheck:
-	"$(PYTHON)" -m mypy exercises scripts
+	find exercises scripts -type f -name '*.py' ! -name 'TODO.py' ! -name 'test_solution.py' -exec sh -c \
+		'for file do \
+			dir=$$(dirname "$$file"); module=$$(basename "$$file" .py); \
+			MYPYPATH="$$dir" "$(PYTHON)" -m mypy --module "$$module" || exit; \
+		done' sh {} +
 
 layout:
 	"$(PYTHON)" scripts/verify_layout.py
@@ -77,88 +81,88 @@ layout:
 check: layout lint typecheck test
 
 01_core_01_values_and_strings:
-	"$(PYTHON)" -m pytest exercises/track01_core/exercise01_values_and_strings/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/01_core/01_values_and_strings/test_solution.py
 
 01_core_02_conditionals_and_booleans:
-	"$(PYTHON)" -m pytest exercises/track01_core/exercise02_conditionals_and_booleans/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/01_core/02_conditionals_and_booleans/test_solution.py
 
 01_core_03_loops_and_ranges:
-	"$(PYTHON)" -m pytest exercises/track01_core/exercise03_loops_and_ranges/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/01_core/03_loops_and_ranges/test_solution.py
 
 01_core_04_functions_and_parameters:
-	"$(PYTHON)" -m pytest exercises/track01_core/exercise04_functions_and_parameters/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/01_core/04_functions_and_parameters/test_solution.py
 
 01_core_05_lists_and_tuples:
-	"$(PYTHON)" -m pytest exercises/track01_core/exercise05_lists_and_tuples/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/01_core/05_lists_and_tuples/test_solution.py
 
 01_core_06_dictionaries_and_sets:
-	"$(PYTHON)" -m pytest exercises/track01_core/exercise06_dictionaries_and_sets/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/01_core/06_dictionaries_and_sets/test_solution.py
 
 01_core_07_comprehensions:
-	"$(PYTHON)" -m pytest exercises/track01_core/exercise07_comprehensions/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/01_core/07_comprehensions/test_solution.py
 
 01_core_08_classes_and_dataclasses:
-	"$(PYTHON)" -m pytest exercises/track01_core/exercise08_classes_and_dataclasses/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/01_core/08_classes_and_dataclasses/test_solution.py
 
 01_core_09_exceptions_and_validation:
-	"$(PYTHON)" -m pytest exercises/track01_core/exercise09_exceptions_and_validation/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/01_core/09_exceptions_and_validation/test_solution.py
 
 01_core_10_iterators_and_generators:
-	"$(PYTHON)" -m pytest exercises/track01_core/exercise10_iterators_and_generators/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/01_core/10_iterators_and_generators/test_solution.py
 
 01_core_11_files_and_context_managers:
-	"$(PYTHON)" -m pytest exercises/track01_core/exercise11_files_and_context_managers/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/01_core/11_files_and_context_managers/test_solution.py
 
 01_core_12_modules_and_standard_library:
-	"$(PYTHON)" -m pytest exercises/track01_core/exercise12_modules_and_standard_library/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/01_core/12_modules_and_standard_library/test_solution.py
 
 01_core_13_decorators_and_closures:
-	"$(PYTHON)" -m pytest exercises/track01_core/exercise13_decorators_and_closures/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/01_core/13_decorators_and_closures/test_solution.py
 
 01_core_14_typing_and_protocols:
-	"$(PYTHON)" -m pytest exercises/track01_core/exercise14_typing_and_protocols/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/01_core/14_typing_and_protocols/test_solution.py
 
 01_core_15_command_line_arguments:
-	"$(PYTHON)" -m pytest exercises/track01_core/exercise15_command_line_arguments/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/01_core/15_command_line_arguments/test_solution.py
 
 02_concurrency_01_bounded_map:
-	"$(PYTHON)" -m pytest exercises/track02_concurrency_async/exercise01_bounded_map/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/02_concurrency_async/01_bounded_map/test_solution.py
 
 02_concurrency_02_async_pipeline:
-	"$(PYTHON)" -m pytest exercises/track02_concurrency_async/exercise02_async_pipeline/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/02_concurrency_async/02_async_pipeline/test_solution.py
 
 03_software_engineering_01_configuration:
-	"$(PYTHON)" -m pytest exercises/track03_software_engineering/exercise01_configuration/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/03_software_engineering/01_configuration/test_solution.py
 
 03_software_engineering_02_order_service:
-	"$(PYTHON)" -m pytest exercises/track03_software_engineering/exercise02_order_service/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/03_software_engineering/02_order_service/test_solution.py
 
 03_software_engineering_03_configuration_precedence:
-	"$(PYTHON)" -m pytest exercises/track03_software_engineering/exercise03_configuration_precedence/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/03_software_engineering/03_configuration_precedence/test_solution.py
 
 04_data_engineering_01_normalize_events:
-	"$(PYTHON)" -m pytest exercises/track04_data_engineering/exercise01_normalize_events/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/04_data_engineering/01_normalize_events/test_solution.py
 
 04_data_engineering_02_sqlite_warehouse:
-	"$(PYTHON)" -m pytest exercises/track04_data_engineering/exercise02_sqlite_warehouse/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/04_data_engineering/02_sqlite_warehouse/test_solution.py
 
 04_data_engineering_03_polars_lazy_aggregations:
-	"$(PYTHON)" -m pytest exercises/track04_data_engineering/exercise03_polars_lazy_aggregations/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/04_data_engineering/03_polars_lazy_aggregations/test_solution.py
 
 04_data_engineering_04_parquet_projection:
-	"$(PYTHON)" -m pytest exercises/track04_data_engineering/exercise04_parquet_projection/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/04_data_engineering/04_parquet_projection/test_solution.py
 
 05_ai_applications_01_vector_search:
-	"$(PYTHON)" -m pytest exercises/track05_ai_applications/exercise01_vector_search/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/05_ai_applications/01_vector_search/test_solution.py
 
 05_ai_applications_02_retrieval_evaluation:
-	"$(PYTHON)" -m pytest exercises/track05_ai_applications/exercise02_retrieval_evaluation/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/05_ai_applications/02_retrieval_evaluation/test_solution.py
 
 05_ai_applications_03_numpy_feature_scaling:
-	"$(PYTHON)" -m pytest exercises/track05_ai_applications/exercise03_numpy_feature_scaling/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/05_ai_applications/03_numpy_feature_scaling/test_solution.py
 
 05_ai_applications_04_pytorch_binary_classifier:
-	"$(PYTHON)" -m pytest exercises/track05_ai_applications/exercise04_pytorch_binary_classifier/test_solution.py
+	"$(PYTHON)" -m pytest --import-mode=importlib exercises/05_ai_applications/04_pytorch_binary_classifier/test_solution.py
 
 reset:
 	$(if $(EXERCISE),,$(error Set EXERCISE=<exercise-directory>))

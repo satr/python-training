@@ -19,7 +19,7 @@ Every exercise contains:
 To practise an exercise, replace `solution.py` with its `TODO.py` template:
 
 ```bash
-make reset EXERCISE=exercises/track01_core/exercise01_values_and_strings
+make reset EXERCISE=exercises/01_core/01_values_and_strings
 ```
 
 Then implement the missing behavior and run its dedicated target:
@@ -37,11 +37,11 @@ the complete list.
 
 | Track | Focus |
 | --- | --- |
-| [01 Core Python](exercises/track01_core) | Types, control flow, functions, collections, errors, iterators, OOP, typing |
-| [02 Concurrency and async](exercises/track02_concurrency_async) | Threads, processes, asyncio, queues, cancellation |
-| [03 Software engineering](exercises/track03_software_engineering) | Testing, architecture, APIs, configuration, observability |
-| [04 Data engineering](exercises/track04_data_engineering) | Files, SQL, Polars, Arrow, Parquet, validation, pipelines |
-| [05 AI applications](exercises/track05_ai_applications) | NumPy, PyTorch, ML foundations, retrieval, evaluation, production patterns |
+| [01 Core Python](exercises/01_core) | Types, control flow, functions, collections, errors, iterators, OOP, typing |
+| [02 Concurrency and async](exercises/02_concurrency_async) | Threads, processes, asyncio, queues, cancellation |
+| [03 Software engineering](exercises/03_software_engineering) | Testing, architecture, APIs, configuration, observability |
+| [04 Data engineering](exercises/04_data_engineering) | Files, SQL, Polars, Arrow, Parquet, validation, pipelines |
+| [05 AI applications](exercises/05_ai_applications) | NumPy, PyTorch, ML foundations, retrieval, evaluation, production patterns |
 
 The core track provides a complete beginner sequence, while the other tracks
 start with representative exercises. The

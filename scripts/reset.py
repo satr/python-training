@@ -11,14 +11,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EXERCISES = ROOT / "exercises"
-TRACK_PATTERN = re.compile(r"track\d{2}_[a-z0-9_]+")
-EXERCISE_PATTERN = re.compile(r"exercise\d{2}_[a-z0-9_]+")
+TRACK_PATTERN = re.compile(r"\d{2}_[a-z0-9_]+")
+EXERCISE_PATTERN = re.compile(r"\d{2}_[a-z0-9_]+")
 
 
 def exercise_directories() -> list[Path]:
     return sorted(
         path.parent
-        for path in EXERCISES.glob("track[0-9][0-9]_*/exercise*/TODO.py")
+        for path in EXERCISES.glob("[0-9][0-9]_*/[0-9][0-9]_*/TODO.py")
         if not path.parent.is_symlink()
     )
 

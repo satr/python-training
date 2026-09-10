@@ -18,9 +18,9 @@ software practices, data pipelines, and AI-enabled applications.
 
 ## Exercise contract
 
-Exercises live at `exercises/trackNN_name/exerciseNN_name/`. These prefixes
-preserve learning order while remaining valid Python package names. Each
-directory must contain:
+Exercises live at `exercises/NN_name/NN_name/`. The numeric prefixes
+preserve learning order while keeping directory names concise. Each directory
+must contain:
 
 - `README.md` with `Theory`, `Task`, `Run`, and `Further practice` sections.
   It must also include a `Learn before coding` section immediately before

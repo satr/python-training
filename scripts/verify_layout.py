@@ -6,8 +6,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 EXERCISES = ROOT / "exercises"
 REQUIRED = {"README.md", "TODO.py", "__init__.py", "solution.py", "test_solution.py"}
-TRACK_PATTERN = re.compile(r"track\d{2}_[a-z0-9_]+")
-EXERCISE_PATTERN = re.compile(r"exercise\d{2}_[a-z0-9_]+")
+TRACK_PATTERN = re.compile(r"\d{2}_[a-z0-9_]+")
+EXERCISE_PATTERN = re.compile(r"\d{2}_[a-z0-9_]+")
 
 
 def main() -> None:
@@ -25,7 +25,7 @@ def main() -> None:
             if not EXERCISE_PATTERN.fullmatch(exercise.name):
                 errors.append(f"Invalid exercise name: {exercise.relative_to(ROOT)}")
                 continue
-            exercise_numbers.append(int(exercise.name[8:10]))
+            exercise_numbers.append(int(exercise.name[:2]))
             missing = REQUIRED - {path.name for path in exercise.iterdir()}
             if missing:
                 errors.append(
