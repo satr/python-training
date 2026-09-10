@@ -57,3 +57,17 @@ make check
 
 See [INSTALL.md](INSTALL.md) for platform notes and [AGENTS.md](AGENTS.md) for
 the exercise-authoring and AI-assistant workflow.
+
+## AI agent workflow
+
+Vendor-neutral GitHub Copilot custom agents live in
+[`.github/agents`](.github/agents). The profiles omit the `model` property so
+they inherit the model selected by the supported Copilot environment rather
+than depending on a specific AI vendor or model.
+
+Select `orchestrator` for repository changes. It delegates to dedicated
+planning, implementation, behavior verification, repository validation, and
+security subagents. Failed gates return to implementation and repeat until all
+checks pass or a concrete blocker is reported. Every role must redact
+credentials, tokens, personal data, private endpoints, and other sensitive
+information from prompts, logs, handoffs, patches, and reports.

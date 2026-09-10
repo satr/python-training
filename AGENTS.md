@@ -51,4 +51,6 @@ When adding an exercise:
 ## Progress log
 
 - 2026-09-10: Repository foundation and five-track curriculum created.
+- 2026-09-10: Added vendor-neutral Copilot agents with iterative planning,
+  implementation, verification, validation, and security gates.
 - Next: complete the core track in order, beginning with measurements.
